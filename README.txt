@@ -1,18 +1,43 @@
-This repository simply stores the Fortran 77 version of the IAU SOFA
-library in a git repository.  The files were extracted from:
+IAU SOFA library
+----------------
 
-  sofa_f-20170420.tar.gz (SHA256: d18bab75bad55477a3c64ec2b40e5afe268a38faee1346808219ba4d74f9fb64)
+This repository stores the unmodified Fortran 77 version of the IAU
+SOFA library in a git repository and provides a partial Fortran 90
+interface file.  The files were extracted from:
+
+  sofa_f-20170420.tar.gz
+   (SHA256: d18bab75bad55477a3c64ec2b40e5afe268a38faee1346808219ba4d74f9fb64)
 
 The latest version can be obtained from
 
   http://www.iausofa.org/current_F.html
 
-The copying conditions are given in copyr.lis, reproduced below:
-
-copyr.lis                                                  2017 March 20
+Additions
+---------
 
 A Fortran 90 interface file for a subset of the SOFA functions is
 included in this directory.  It is derived from the Fortan 77 sources.
+
+A simple Makefile is included in the top directory.  It assumes GNU
+make and a Unix system (tested on Linux).  Upon invocation it will (1)
+compile the SOFA code and (2) compile the F90 interface to produce a
+module file in the same directory $(DIR).
+
+Just link your F90 code using -L$(DIR) -I$(DIR) -lsofa where $(DIR)
+Use $(FC) to set your Fortran compiler.
+
+    Berke Durak <berke.durak@gmail.com>
+    2017-09-17
+
+Copying
+-------
+
+The copying conditions for the SOFA code are given in copyr.lis,
+reproduced below.  The additions (the Makefile and the interface file)
+are placed in the public domain.
+
+------------------------------------------------------------------------
+copyr.lis                                                  2017 March 20
 
 COPYRIGHT NOTICE
 
