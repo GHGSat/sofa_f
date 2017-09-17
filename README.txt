@@ -11,6 +11,8 @@ The copying conditions are given in copyr.lis, reproduced below:
 
 copyr.lis                                                  2017 March 20
 
+A Fortran 90 interface file for a subset of the SOFA functions is
+included in this directory.  It is derived from the Fortan 77 sources.
 
 COPYRIGHT NOTICE
 
