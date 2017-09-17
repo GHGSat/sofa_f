@@ -119,6 +119,11 @@ module iau_sofa
        double precision, intent(out) :: r(3,3)
      end subroutine iau_rz
 
+     subroutine iau_s2c ( theta, phi, c )
+       double precision, intent(in) :: theta,phi
+       double precision, intent(out) :: c(3)
+     end subroutine iau_s2c
+
      subroutine iau_c2s ( p, theta, phi )
        double precision, intent(in) :: p(3)
        double precision, intent(out) :: theta,phi
@@ -130,5 +135,17 @@ module iau_sofa
        double precision, intent(out) :: elong, phi, height
        integer, intent(out) :: j
      end subroutine iau_gc2gd
+
+     subroutine iau_gd2gc ( n, elong, phi, height, xyz, j )
+       integer, intent(in) :: n
+       double precision, intent(in) :: elong, phi, height
+       double precision, intent(out) :: xyz(3)
+       integer, intent(out) :: j
+     end subroutine iau_gd2gc
   end interface
+
+  integer, parameter :: &
+       iau_ellipsoid_wgs84=1, &
+       iau_ellipsoid_grs80=2, &
+       iau_ellipsoid_wgs72=3
 end module iau_sofa
