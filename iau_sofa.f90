@@ -84,6 +84,12 @@ module iau_sofa
        integer, intent(out) :: j
      end subroutine iau_tttdb
 
+     subroutine iau_tdbtt ( tdb1, tdb2, dtr, tt1, tt2, j )
+       double precision, intent(in) :: tdb1, tdb2, dtr
+       double precision, intent(out) :: tt1, tt2
+       integer, intent(out) :: j
+     end subroutine iau_tdbtt
+
      subroutine iau_tttai ( tt1, tt2, tai1, tai2, j )
        double precision, intent(in) :: tt1, tt2
        double precision, intent(out) :: tai1, tai2
